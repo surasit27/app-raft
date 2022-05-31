@@ -244,42 +244,42 @@ class _HomeOrderState extends State<HomeOrder> {
                         colorScheme: ColorScheme.light(primary: Colors.blue),
                       ),
                       child: Stepper(
-                          type: StepperType.horizontal,
-                          steps: getsteps(),
-                          currentStep: currentStep,
-                          onStepContinue: () {
-                            final isLastStap =
-                                currentStep == getsteps().length - 1;
-                            if (isLastStap) {
-                              setState(() => isCompleted = true);
-                            } else {
-                              setState(() => currentStep += 1);
-                            }
-                          },
-                          // onStepTapped: (step) => setState(() => currentStep = step),
-                          onStepCancel: currentStep == 0
-                              ? null
-                              : () => setState(() => currentStep -= 1),
-                          controlsBuilder: (context,
-                              {onStepContinue, onStepCancel}) {
-                            final isLastStep =
-                                currentStep == getsteps().length - 1;
-                            return Container(
-                              margin: EdgeInsets.only(top: 20),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: ElevatedButton(
-                                      child: Text(isLastStep
-                                          ? 'ยื่นยันการจอง'
-                                          : 'ถัดไป'),
-                                      onPressed: onStepContinue,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          }),
+                        type: StepperType.horizontal,
+                        steps: getsteps(),
+                        currentStep: currentStep,
+                        onStepContinue: () {
+                          final isLastStap =
+                              currentStep == getsteps().length - 1;
+                          if (isLastStap) {
+                            setState(() => isCompleted = true);
+                          } else {
+                            setState(() => currentStep += 1);
+                          }
+                        },
+                        // onStepTapped: (step) => setState(() => currentStep = step),
+                        // onStepCancel: currentStep == 0
+                        //     ? null
+                        //     : () => setState(() => currentStep -= 1),
+                        // controlsBuilder: (context,
+                        //     {onStepContinue, onStepCancel}) {
+                        //   final isLastStep = currentStep == getsteps().length - 1;
+                        //   return  Container(
+                        //     margin: EdgeInsets.only(top: 20),
+                        //     child: Row(
+                        //       children: [
+                        //         Expanded(
+                        //           child: ElevatedButton(
+                        //             child: Text(isLastStep
+                        //                 ? 'ยื่นยันการจอง'
+                        //                 : 'ถัดไป'),
+                        //             onPressed: onStepContinue,
+                        //           ),
+                        //         ),
+                        //       ],
+                        //     ),
+                        //   );
+                        // }
+                      ),
                     ),
     );
   }
